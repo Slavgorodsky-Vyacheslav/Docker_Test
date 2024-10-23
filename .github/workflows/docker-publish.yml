@@ -21,7 +21,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/trist1:latest .
+        docker build --file ./webproj/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/trist1:latest .
 
     - name: Push Docker image
       run: |
