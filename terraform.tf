@@ -4,17 +4,6 @@ provider "aws" {
     region = "eu-north-1"
 }
 
-terraform {
-  backend "s3" {
-    AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    bucket = "temp-terraform-state"
-    key    = "aws/dev/terr-state/terraform.tfstate"
-    region = "eu-north-1"
-    encrypt = true
-  }
-}
-
 resource "aws_instance" "my_Ubuntu" {
     ami = "ami-08eb150f611ca277f"
     instance_type = "t3.micro"
