@@ -6,8 +6,6 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    AWS_ACCESS_KEY_ID = var.AWS_ACCESS_KEY_ID
-    AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
     bucket = "temp-terraform-state"
     key    = "aws/dev/terr-state/terraform.tfstate"
     region = "eu-north-1"
